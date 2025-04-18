@@ -54,36 +54,32 @@ Example:
 
 Open `raman_fit.mlx` and set your configuration:
 
-🧭 *Rotation Angles*: If known, insert the Euler angles and phase offset for the Jones matrix.
+🧭 *Rotation Angles*: If known, insert the Euler angles and phase offset for the Jones matrix:
 
-```matlab
 % Substitute known angles
 J = subs(J, x, 0);       % e.g., zero phase difference
 R_X = subs(R_X, Phi, 0); % e.g., crystal aligned with lab frame
 R_Z2 = subs(R_Z2, phi2, 0);
 
-🧪 *Raman Tensor*: Define the Raman tensors of your sample. For example:
+🧪 *Raman Tensor*: Define the Raman tensors of your sample:
 
-  ```matlab
-  syms theta phi1 Phi phi2 x a b c d real
+syms theta phi1 Phi phi2 x a b c d real
 
-  % Define a general 3x3 Raman tensor
-  alpha = [a, 0, 0; 0, a, 0; 0, 0, b];
-  E_x = [c, 0, 0; 0, -c, d; 0, d, 0];
-  E_y = [0, -c, -d; -c, 0, 0; -d, 0, 0];
+% Define a general 3x3 Raman tensor
+alpha = [a, 0, 0; 0, a, 0; 0, 0, b];
+E_x = [c, 0, 0; 0, -c, d; 0, d, 0];
+E_y = [0, -c, -d; -c, 0, 0; -d, 0, 0];
 
-⚙️ *Basic Settings*: Set your sample folder and which Raman peak to analyze.
+⚙️ *Basic Settings*: Set your sample folder and which Raman peak to analyze:
 
-```matlab
 selected_folder = "Quartz";        % Folder name under /data/
 chosen_peak = 1163;                % Peak to analyze (cm⁻¹)
 selected_mode = 'E';               % Mode: 'alpha' or 'E'
 plot_type = "half-polar";          % 'normal' or 'half-polar'
 
 ✏️ *Parameter Initialization*: Set initial guesses and constraints for the fit parameters as needed.
-(Parameters you omit will use default values.)  For example:
+(Parameters you omit will use default values.):
 
-```matlab
 custom_guesses = struct( ...
     'a', 3, ...
     'b', 6, ...
