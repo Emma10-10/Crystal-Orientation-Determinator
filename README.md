@@ -24,7 +24,7 @@ Ensure the following file/folder structure exists:
 ┣ 📂 data/
 ┃ ┣ 📂 Sample/                         ← Sample name (e.g., "Quartz")
 ┃ ┃ ┗ 📄 normalized_peak_heights.csv   ← Your Raman data
-┣ 📄 raman_fit.mlx                     ← MATLAB script (one level below /data)
+┣ 📄 Raman_Intensity_Light_in_xy_plane_plus_fits.mlx                     ← MATLAB script (one level below /data)
 
 ---
 
@@ -52,7 +52,7 @@ Example:
 
 ### 3. Configure Script
 
-Open `raman_fit.mlx` and set your configuration:
+Open `Raman_Intensity_Light_in_xy_plane_plus_fits.mlx` and set your configuration:
 
 🧭 *Rotation Angles*: If known, insert the Euler angles and phase offset for the Jones matrix:
 
